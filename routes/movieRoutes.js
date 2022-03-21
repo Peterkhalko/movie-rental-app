@@ -59,10 +59,48 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  try {
+    const _id = req.params.id;
+    const { error } = movieInputValidation(req.body);
+    if (error) {
+      return res.status(400).send(error);
+    }
+    const genre = await Genre.findById(req.body.genreId);
+    if (!genre) return res.status(400).send("Please check genreId");
+    const movie = await Movie.findByIdAndUpdate(
+      _id,
+      {
+        $set: {
+          title: req.body.title,
+          genre: {
+            name: genre.name,
+            _id: genre._id,
+          },
+          dailyRentalRate: req.body.dailyRentalRate,
+          numberInStocks: req.body.numberInStocks,
+        },
+      },
+      { new: true }
+    );
+    if (!movie) {
+      return res.send("movie not found to update");
+    }
+    res.send(movie);
+  } catch (error) {
+    res.send(error.message);
+  }
+});
 router.delete("/:id", async (req, res) => {
   const _id = req.params.id;
   try {
-    await Movie.findByIdAndDelete;
-  } catch (error) {}
+    const movie = await Movie.findByIdAndDelete(_id);
+    res.send(movie);
+    if (!movie) {
+      return res.status(400).send("movie not found to delete");
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
 });
 module.exports = router;

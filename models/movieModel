@@ -39,6 +39,5 @@ function movieInputValidation(input) {
 
 //model for movie collection
 const Movie = mongoose.model("movies", movieSchema);
-module.exports.movieSchema = movieSchema;
 module.exports.Movie = Movie;
 module.exports.movieInputValidation = movieInputValidation;
