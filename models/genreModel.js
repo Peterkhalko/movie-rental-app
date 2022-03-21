@@ -20,7 +20,6 @@ function genreInputValidation(input) {
 
 //model for genres collection
 const Genre = mongoose.model("genres", genreSchema);
-
 module.exports.genreSchema = genreSchema;
 module.exports.Genre = Genre;
 module.exports.genreInputValidation = genreInputValidation;

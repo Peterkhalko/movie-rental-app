@@ -9,7 +9,7 @@ const { Genre, genreInputValidation } = require("../models/genreModel");
 router.get("/", async (req, res) => {
   try {
     const genres = await Genre.find({});
-    if (!genres) {
+    if (genres.length == 0) {
       return res.status(400).send("Data not found");
     }
     res.send(genres);
@@ -96,4 +96,3 @@ router.delete("/:id", async (req, res) => {
 });
 
 module.exports = router;
-//testing git
