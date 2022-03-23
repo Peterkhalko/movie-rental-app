@@ -8,6 +8,8 @@ const { joiPassword } = require("joi-password");
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
+    min: 5,
+    max: 255,
     required: true,
   },
   email: {
@@ -15,6 +17,9 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
+    min: 5,
+    max: 1024,
+    required: true,
   },
   isAdmin: {
     type: Boolean,
@@ -23,16 +28,18 @@ const userSchema = new mongoose.Schema({
 });
 function userInputValidation(input) {
   const schema = Joi.object({
-    name: Joi.string().required(),
-    email: Joi.string().email().required(),
+    name: Joi.string().min(5).max(50).required(),
+    email: Joi.string().min(1).max(100).email().required(),
     password: joiPassword
       .string()
-      .minOfSpecialCharacters(2)
-      .minOfLowercase(2)
-      .minOfUppercase(2)
-      .minOfNumeric(2)
-      .noWhiteSpaces()
-      .required(),
+      // .minOfSpecialCharacters(2)
+      // .minOfLowercase(2)
+      // .minOfUppercase(2)
+      // .minOfNumeric(2)
+      // .noWhiteSpaces()
+      // .required()
+      .min(5)
+      .max(255),
     isAdmin: Joi.boolean().default(false),
   });
   return schema.validate(input);

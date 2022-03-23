@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const res = require("express/lib/response");
+const _ = require("lodash");
 const router = express.Router();
 const { Users, userInputValidation } = require("../models/userModel");
 
@@ -33,14 +34,19 @@ router.post("/", async (req, res) => {
     if (error) {
       return res.status(404).send(error.details[0].message);
     }
-    const user = new Users({
+    let user = await Users.findOne({ email: req.body.email });
+    if (user) {
+      return res.send(400).send("Email already exists");
+    }
+
+    user = new Users({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
       isAdmin: req.body.isAdmin,
     });
     await user.save();
-    res.send(user);
+    res.send(_.pick("_id", "name", "email", "isAdmin"));
   } catch (error) {
     res.send(error);
   }

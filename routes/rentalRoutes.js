@@ -96,14 +96,23 @@ router.patch("/:id", async (req, res) => {
 });
 
 router.delete("/:id", async (req, res) => {
+  const session = await Rentals.startSession();
+  session.startTransaction();
   try {
     const rental = await Rentals.findByIdAndDelete(req.params.id);
     if (!rental) {
       return res.status("404").send("Rental details not found to delete");
     }
+    await Movie.findByIdAndUpdate(rental.movie._id, {
+      $inc: { numberInStocks: 1 },
+    });
+    session.abortTransaction();
+    session.endSession();
     res.send(rental);
   } catch (error) {
     res.send(error);
+    session.abortTransaction();
+    session.endSession();
   }
 });
 module.exports = router;
