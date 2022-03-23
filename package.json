@@ -14,6 +14,8 @@
     "express": "^4.17.3",
     "joi": "^17.6.0",
     "joi-objectid": "^4.0.2",
-    "mongoose": "^6.2.6"
+    "joi-password": "^3.0.1",
+    "mongoose": "^6.2.6",
+    "mongoose-type-email": "^1.1.2"
   }
 }

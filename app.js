@@ -6,13 +6,14 @@ app.use(express.json());
 const port = process.env.PORT || 8000;
 const genresRouter = require("./routes/genresRoutes");
 const customerRouter = require("./routes/customerRoutes");
-const rentalRouter = require("./routes/rentalRoutes");
 const movieRouter = require("./routes/movieRoutes");
+const rentalRouter = require("./routes/rentalRoutes");
+const userRouter = require("./routes/userRoutes");
 app.use("/api/genres", genresRouter);
 app.use("/api/customers", customerRouter);
 app.use("/api/movies", movieRouter);
 app.use("/api/rentals", rentalRouter);
-
+app.use("/api/users", userRouter);
 mongoose
   .connect(config.get("DB_CONNECTION_URL"))
   .then((db) => {

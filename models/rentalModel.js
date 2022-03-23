@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { movieSchema } = require("./movieModel");
-const { customerSchema } = require("./customerModel");
+// const { customerSchema } = require("./customerModel");
 const Joi = require("joi");
 const { number, date } = require("joi");
 const rentalSchema = new mongoose.Schema({
