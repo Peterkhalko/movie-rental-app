@@ -4,6 +4,8 @@ const Joi = require("joi");
 const { string, boolean } = require("joi");
 require("mongoose-type-email");
 const joi = require("joi");
+const config = require("config");
+const jwt = require("jsonwebtoken");
 const { joiPassword } = require("joi-password");
 const userSchema = new mongoose.Schema({
   name: {
@@ -26,6 +28,15 @@ const userSchema = new mongoose.Schema({
     default: false,
   },
 });
+
+userSchema.methods.getAuthToken = function () {
+  return jwt.sign(
+    { _id: this.id, isAdmin: this.isAdmin },
+    config.get("private_key")
+  );
+};
+
+console.log(userSchema.getAuthToken);
 function userInputValidation(input) {
   const schema = Joi.object({
     name: Joi.string().min(5).max(50).required(),

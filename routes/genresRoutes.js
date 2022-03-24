@@ -1,12 +1,10 @@
 const express = require("express");
-const Joi = require("joi");
+const auth = require("../middleware/auth");
 const router = express.Router();
-const mongoose = require("mongoose");
-const config = require("config");
 const { Genre, genreInputValidation } = require("../models/genreModel");
 
 //get API
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
     const genres = await Genre.find({});
     if (genres.length == 0) {

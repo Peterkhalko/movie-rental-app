@@ -16,7 +16,7 @@ app.use("/api/movies", movieRouter);
 app.use("/api/rentals", rentalRouter);
 app.use("/api/users", userRouter);
 app.use("/api/login", loginRouter);
-
+console.log(config.get("private_key"));
 mongoose
   .connect(config.get("DB_CONNECTION_URL"))
   .then((db) => {
