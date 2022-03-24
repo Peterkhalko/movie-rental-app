@@ -3,6 +3,7 @@ const router = express.Router();
 const { Rentals, rentalInputValidation } = require("../models/rentalModel");
 const { Customer } = require("../models/customerModel");
 const { Movie } = require("../models/movieModel");
+
 router.get("/", async (req, res) => {
   const rental = await Movie.find({});
   if (!rental) {
