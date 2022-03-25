@@ -4,6 +4,9 @@ const _ = require("lodash");
 const bcrypt = require("bcrypt");
 const router = express.Router();
 const { Users, userInputValidation } = require("../models/userModel");
+const auth = require("../middleware/auth");
+const adminAuth = require("../middleware/adminAuth");
+const validateObjectId = require("../middleware/validateObjectId");
 
 router.get("/", async (req, res) => {
   try {
@@ -16,7 +19,7 @@ router.get("/", async (req, res) => {
     res.send(error);
   }
 });
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateObjectId, async (req, res) => {
   try {
     const _id = req.params.id;
     const user = await Users.findById({ _id });
@@ -28,7 +31,7 @@ router.get("/:id", async (req, res) => {
     res.status(400).send(error.message);
   }
 });
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   try {
     const { error } = userInputValidation(req.body);
     if (error) {
@@ -58,7 +61,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", validateObjectId, auth, adminAuth, async (req, res) => {
   try {
     const user = await Users.findByIdAndDelete(req.params.id);
     if (!user) {

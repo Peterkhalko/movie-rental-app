@@ -35,8 +35,6 @@ userSchema.methods.getAuthToken = function () {
     config.get("private_key")
   );
 };
-
-console.log(userSchema.getAuthToken);
 function userInputValidation(input) {
   const schema = Joi.object({
     name: Joi.string().min(5).max(50).required(),

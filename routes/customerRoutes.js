@@ -1,24 +1,23 @@
 const express = require("express");
 const router = express.Router();
+const auth = require("../middleware/auth");
 const {
   Customer,
   customerInputValidation,
   customerInputValidationPATCH,
 } = require("../models/customerModel");
+const adminAuth = require("../middleware/adminAuth");
+const validateObjectId = require("../middleware/validateObjectId");
 
 router.get("/", async (req, res) => {
-  try {
-    const customers = await Customer.find({});
-    if (customers.length == 0) {
-      return res.status("404").send("No data found");
-    }
-    res.send(customers);
-  } catch (error) {
-    res.send(error);
+  const customers = await Customer.find();
+  if (customers.length == 0) {
+    return res.status("404").send("No data found");
   }
+  res.send(customers);
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateObjectId, async (req, res) => {
   const _id = req.params.id;
   try {
     const customer = await Customer.findById({ _id });
@@ -28,7 +27,7 @@ router.get("/:id", async (req, res) => {
     res.status(404).send(error);
   }
 });
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   try {
     const { error } = customerInputValidation(req.body);
     if (error) {
@@ -46,7 +45,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", validateObjectId, auth, async (req, res) => {
   try {
     const id = req.params.id;
     const { error } = customerInputValidation(req.body);
@@ -100,7 +99,7 @@ router.put("/:id", async (req, res) => {
 //   }
 // });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", validateObjectId, auth, adminAuth, async (req, res) => {
   const id = req.params.id;
   try {
     const customer = await Customer.findByIdAndDelete(id);

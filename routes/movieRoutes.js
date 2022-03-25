@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Genre } = require("../models/genreModel");
+const auth = require("../middleware/auth");
 const {
   Movie,
   movieSchema,
@@ -8,6 +9,8 @@ const {
 } = require("../models/movieModel");
 const { append } = require("express/lib/response");
 const req = require("express/lib/request");
+const adminAuth = require("../middleware/adminAuth");
+const validateObjectId = require("../middleware/validateObjectId");
 
 router.get("/", async (req, res) => {
   try {
@@ -21,7 +24,7 @@ router.get("/", async (req, res) => {
     res.send(error);
   }
 });
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateObjectId, async (req, res) => {
   const _id = req.params.id;
   console.log(_id);
   try {
@@ -33,7 +36,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   const { error } = movieInputValidation(req.body);
   if (error) {
     return res.status(400).send(error.details[0].message);
@@ -58,7 +61,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", validateObjectId, auth, async (req, res) => {
   try {
     const _id = req.params.id;
     const { error } = movieInputValidation(req.body);
@@ -90,7 +93,7 @@ router.put("/:id", async (req, res) => {
     res.send(error.message);
   }
 });
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", validateObjectId, auth, adminAuth, async (req, res) => {
   const _id = req.params.id;
   try {
     const movie = await Movie.findByIdAndDelete(_id);

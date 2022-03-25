@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
     return res.status(400).send("user password did not match");
   }
   const token = user.getAuthToken();
-  res.send(`user password matched ${token}`);
+  res.send(` ${token}`);
   function validateLogin(input) {
     const schema = Joi.object({
       email: Joi.string().min(5).max(255).required().email(),

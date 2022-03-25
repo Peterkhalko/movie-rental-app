@@ -3,6 +3,9 @@ const router = express.Router();
 const { Rentals, rentalInputValidation } = require("../models/rentalModel");
 const { Customer } = require("../models/customerModel");
 const { Movie } = require("../models/movieModel");
+const auth = require("../middleware/auth");
+const adminAuth = require("../middleware/adminAuth");
+const validateObjectId = require("../middleware/validateObjectId");
 
 router.get("/", async (req, res) => {
   const rental = await Movie.find({});
@@ -11,7 +14,7 @@ router.get("/", async (req, res) => {
   }
   res.send(rental);
 });
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateObjectId, async (req, res) => {
   const _id = req.params.id;
   const rental = await Rentals.findById({ _id });
   if (!rental) {
@@ -20,7 +23,7 @@ router.get("/:id", async (req, res) => {
   console.log(rental);
   res.send(rental);
 });
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   try {
     const { error } = rentalInputValidation(req.body);
     if (error) {
@@ -67,7 +70,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.patch("/:id", async (req, res) => {
+router.patch("/:id", validateObjectId, auth, async (req, res) => {
   const _id = req.params.id;
   const session = await Rentals.startSession();
   session.startTransaction();
@@ -96,7 +99,7 @@ router.patch("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", validateObjectId, auth, adminAuth, async (req, res) => {
   const session = await Rentals.startSession();
   session.startTransaction();
   try {

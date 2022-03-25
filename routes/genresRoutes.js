@@ -1,10 +1,12 @@
 const express = require("express");
+const adminAuth = require("../middleware/adminAuth");
 const auth = require("../middleware/auth");
+const validateObjectId = require("../middleware/validateObjectId");
 const router = express.Router();
 const { Genre, genreInputValidation } = require("../models/genreModel");
 
 //get API
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const genres = await Genre.find({});
     if (genres.length == 0) {
@@ -16,7 +18,7 @@ router.get("/", auth, async (req, res) => {
   }
 });
 //getById API
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateObjectId, async (req, res) => {
   const _id = req.params.id;
   try {
     const genre = await Genre.findById({ _id });
@@ -28,7 +30,7 @@ router.get("/:id", async (req, res) => {
 });
 
 //post API
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   try {
     const { error } = genreInputValidation(req.body);
     if (error) {
@@ -45,7 +47,7 @@ router.post("/", async (req, res) => {
 });
 
 //Put API
-router.put("/:id", async (req, res) => {
+router.put("/:id", validateObjectId, auth, async (req, res) => {
   try {
     const id = req.params.id;
     const { error } = genreInputValidation(req.body);
@@ -80,7 +82,7 @@ router.put("/:id", async (req, res) => {
 //   res.send(genreExists);
 // });
 //Delete API
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", validateObjectId, auth, adminAuth, async (req, res) => {
   const id = req.params.id;
   try {
     const genre = await Genre.findByIdAndDelete(id);
