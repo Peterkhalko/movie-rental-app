@@ -10,7 +10,7 @@ const adminAuth = require("../middleware/adminAuth");
 const validateObjectId = require("../middleware/validateObjectId");
 
 router.get("/", async (req, res) => {
-  const customers = await Customer.find();
+  const customers = await Customer.find({ test });
   if (customers.length == 0) {
     return res.status("404").send("No data found");
   }

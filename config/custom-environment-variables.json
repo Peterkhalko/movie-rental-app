@@ -1,3 +1,4 @@
 {
-  "private_key": "movie_rental_jwtPrivateKey"
+  "private_key": "movie_rental_jwtPrivateKey",
+  "sendGridAPIkey": "sendgridapi"
 }
