@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: mongoose.SchemaTypes.Email,
+    required: true,
   },
   password: {
     type: String,
@@ -57,3 +58,4 @@ function userInputValidation(input) {
 const Users = mongoose.model("users", userSchema);
 module.exports.userInputValidation = userInputValidation;
 module.exports.Users = Users;
+module.exports.getAuthToken = userSchema.methods.getAuthToken;

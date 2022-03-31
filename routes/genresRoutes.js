@@ -7,65 +7,50 @@ const { Genre, genreInputValidation } = require("../models/genreModel");
 
 //get API
 router.get("/", async (req, res) => {
-  try {
-    const genres = await Genre.find({});
-    if (genres.length == 0) {
-      return res.status(400).send("Data not found");
-    }
-    res.send(genres);
-  } catch (error) {
-    res.sendStatus(404).send(error);
+  const genres = await Genre.find({});
+  if (genres.length == 0) {
+    return res.status(400).send("Data not found");
   }
+  res.send(genres);
 });
 //getById API
 router.get("/:id", validateObjectId, async (req, res) => {
   const _id = req.params.id;
-  try {
-    const genre = await Genre.findById({ _id });
-    if (!genre) return res.status(404).send("Genre not found");
-    res.send(genre);
-  } catch (error) {
-    res.status(404).send(error);
-  }
+
+  const genre = await Genre.findById({ _id });
+  if (!genre) return res.status(404).send("Genre not found");
+  res.send(genre);
 });
 
 //post API
 router.post("/", auth, async (req, res) => {
-  try {
-    const { error } = genreInputValidation(req.body);
-    if (error) {
-      throw error.details[0].message;
-    }
-    const genre = new Genre({
-      name: req.body.name,
-    });
-    await genre.save();
-    res.send(genre);
-  } catch (error) {
-    res.status(409).send(error.message || error);
+  const { error } = genreInputValidation(req.body);
+  if (error) {
+    throw error.details[0].message;
   }
+  const genre = new Genre({
+    name: req.body.name,
+  });
+  await genre.save();
+  res.send(genre);
 });
 
 //Put API
 router.put("/:id", validateObjectId, auth, async (req, res) => {
-  try {
-    const id = req.params.id;
-    const { error } = genreInputValidation(req.body);
-    if (error) {
-      throw error.details[0].message;
-    }
-    const genre = await Genre.findByIdAndUpdate(
-      id,
-      { $set: { name: req.body.name } },
-      { new: true }
-    );
-    if (!genre) {
-      throw "_id not found to update the data";
-    }
-    res.send(genre);
-  } catch (error) {
-    res.status(404).send(error.message || error);
+  const id = req.params.id;
+  const { error } = genreInputValidation(req.body);
+  if (error) {
+    throw error.details[0].message;
   }
+  const genre = await Genre.findByIdAndUpdate(
+    id,
+    { $set: { name: req.body.name } },
+    { new: true }
+  );
+  if (!genre) {
+    throw { message: "_id not found to update the data" };
+  }
+  res.send(genre);
 });
 // router.patch("/:id", (req, res) => {
 //   const id = req.params.id;
@@ -84,15 +69,12 @@ router.put("/:id", validateObjectId, auth, async (req, res) => {
 //Delete API
 router.delete("/:id", validateObjectId, auth, adminAuth, async (req, res) => {
   const id = req.params.id;
-  try {
-    const genre = await Genre.findByIdAndDelete(id);
-    if (!genre) {
-      throw "_id not found to delete";
-    }
-    res.send(genre);
-  } catch (error) {
-    res.status(404).send(error);
+
+  const genre = await Genre.findByIdAndDelete(id);
+  if (!genre) {
+    throw { message: "_id not found to delete the data" };
   }
+  res.send(genre);
 });
 
 module.exports = router;

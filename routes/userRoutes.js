@@ -23,7 +23,7 @@ router.get("/:id", validateObjectId, async (req, res) => {
   }
   res.send(user);
 });
-router.post("/", auth, async (req, res) => {
+router.post("/", async (req, res) => {
   const { error } = userInputValidation(req.body);
   if (error) {
     return res.status(404).send(`${error.details[0].message}`);
@@ -45,12 +45,12 @@ router.post("/", auth, async (req, res) => {
       });
       await user.save();
       res.send(_.pick(user, ["_id", "name", "email", "isAdmin"]));
-      sendWelcomeEmail(user.email, user.name);
+      //sendWelcomeEmail(user.email, user.name);
     });
   });
 });
 
-router.delete("/:id", validateObjectId, auth, adminAuth, async (req, res) => {
+router.delete("/:id", validateObjectId, async (req, res) => {
   const user = await Users.findByIdAndDelete(req.params.id);
   if (!user) {
     res.send("user not found");

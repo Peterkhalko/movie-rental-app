@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const config = require("config");
 const port = process.env.PORT || 8000;
 require("./startup/logging")();
 require("./startup/config")();

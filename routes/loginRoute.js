@@ -19,13 +19,12 @@ router.post("/", async (req, res) => {
   }
   const token = user.getAuthToken();
   res.send(` ${token}`);
-  function validateLogin(input) {
-    const schema = Joi.object({
-      email: Joi.string().min(5).max(255).required().email(),
-      password: Joi.string().min(5).max(1024).required(),
-    });
-    return schema.validate(input);
-  }
 });
-
+function validateLogin(input) {
+  const schema = Joi.object({
+    email: Joi.string().min(5).max(255).required().email(),
+    password: Joi.string().min(5).max(30).required(),
+  });
+  return schema.validate(input);
+}
 module.exports = router;

@@ -8,3 +8,12 @@ module.exports = function () {
     ],
   });
 };
+
+process.on("uncaughtException", (exception) => {
+  winston.error("we got an uncaght exception", +exception.message);
+  process.exit(1);
+});
+process.on("unhandledRejection", (exception) => {
+  winston.error("we got an unhandled rejection exception", +exception.message);
+  process.exit(1);
+});
