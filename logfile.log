@@ -15,3 +15,44 @@
 {"level":"error","message":"_id not found to update the data, error caught at : Wed Mar 30 2022 17:09:28 GMT+0530 (India Standard Time)"}
 {"level":"error","message":"_id not found to update the data, error caught at : Wed Mar 30 2022 17:09:43 GMT+0530 (India Standard Time)"}
 {"level":"error","message":"_id not found to delete the data, error caught at : Wed Mar 30 2022 17:10:18 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Tue Apr 05 2022 11:02:03 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:03:20 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"1\" }, error caught at : Tue Apr 05 2022 11:03:50 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"1123456\" }, error caught at : Tue Apr 05 2022 11:04:27 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:35:20 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:36:36 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:36:55 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:37:56 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:38:06 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:39:35 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:40:00 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:40:20 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:41:03 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:43:36 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:45:17 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:45:22 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:48:02 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:48:30 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:49:28 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:49:28 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:53:15 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:53:15 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:55:54 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:55:54 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:55:54 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:58:14 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:58:14 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:58:27 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:58:27 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:58:40 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:58:40 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:59:09 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 11:59:09 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 12:03:46 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 12:03:47 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 12:04:01 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 12:04:01 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 12:04:14 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 12:04:15 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 12:13:41 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue Apr 05 2022 12:13:41 GMT+0530 (India Standard Time)"}

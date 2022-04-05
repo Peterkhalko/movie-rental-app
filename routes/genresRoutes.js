@@ -5,20 +5,18 @@ const validateObjectId = require("../middleware/validateObjectId");
 const router = express.Router();
 const { Genre, genreInputValidation } = require("../models/genreModel");
 
-//get API
 router.get("/", async (req, res) => {
   const genres = await Genre.find({});
   if (genres.length == 0) {
-    return res.status(400).send("Data not found");
+    return res.status(404).send("Data not found");
   }
   res.send(genres);
 });
 //getById API
 router.get("/:id", validateObjectId, async (req, res) => {
   const _id = req.params.id;
-
   const genre = await Genre.findById({ _id });
-  if (!genre) return res.status(404).send("Genre not found");
+  if (!genre) return res.status(400).send("Genre not found");
   res.send(genre);
 });
 
@@ -26,7 +24,7 @@ router.get("/:id", validateObjectId, async (req, res) => {
 router.post("/", auth, async (req, res) => {
   const { error } = genreInputValidation(req.body);
   if (error) {
-    throw error.details[0].message;
+    res.status(400).send(error.details[0].message);
   }
   const genre = new Genre({
     name: req.body.name,
