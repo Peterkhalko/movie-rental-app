@@ -5,7 +5,7 @@ const Joi = require("joi");
 const customerSchema = mongoose.Schema({
   name: {
     type: String,
-    min: 5,
+    min: 2,
     max: 50,
     required: true,
   },
@@ -24,7 +24,7 @@ const customerSchema = mongoose.Schema({
 const Customer = mongoose.model("customer", customerSchema);
 function customerInputValidation(input) {
   const schema = Joi.object({
-    name: Joi.string().min(5).max(50).required(),
+    name: Joi.string().min(2).max(50).required(),
     phone: Joi.string().min(10).max(10).required(),
     isGold: Joi.boolean().default(false),
   });
@@ -32,7 +32,7 @@ function customerInputValidation(input) {
 }
 function customerInputValidationPATCH(input) {
   const schema = Joi.object({
-    name: Joi.string().min(5).max(50),
+    name: Joi.string().min(2).max(50),
     phone: Joi.string().min(9).max(10),
     isGold: Joi.boolean().default(),
   });
