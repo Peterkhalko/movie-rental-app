@@ -89,7 +89,6 @@ router.put("/:id", validateObjectId, auth, async (req, res) => {
 
 router.delete("/:id", validateObjectId, auth, adminAuth, async (req, res) => {
   const id = req.params.id;
-
   const customer = await Customer.findByIdAndDelete(id);
   if (!customer) {
     throw "_id not found to delete";
