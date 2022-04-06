@@ -6,7 +6,7 @@ const { genreSchema } = require("./genreModel");
 const movieSchema = new mongoose.Schema({
   title: {
     type: String,
-    min: 5,
+    min: 1,
     max: 225,
     required: true,
     trim: true,
@@ -27,7 +27,7 @@ const movieSchema = new mongoose.Schema({
 });
 function movieInputValidation(input) {
   const schema = Joi.object({
-    title: Joi.string().min(5).max(255).required(),
+    title: Joi.string().min(1).max(255).required(),
     genreId: Joi.objectId().required(),
     dailyRentalRate: Joi.number().min(0).max(255).required(),
     numberInStocks: Joi.number().min(0).max(255).required(),

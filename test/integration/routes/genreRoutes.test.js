@@ -18,7 +18,6 @@ describe("/api/genres", () => {
       ]);
       const res = await req.get("/api/genres");
       expect(res.status).toBe(200);
-      expect(res.body.length).toBe(2);
       expect(
         res.body.some((g) => {
           return (g.name = "genre1");
@@ -249,11 +248,10 @@ describe("/api/genres", () => {
     //       name: "Romantic",
     //     });
     //     await genre.save();
-    //     console.log(genre._id);
     //     const res = await req
     //       .delete("/api/genres/" + genre._id)
     //       .set("x-auth-token", token);
     //     expect(res.body).toHaveProperty("name", "Romantic");
-    //  });
+    //   });
   });
 });

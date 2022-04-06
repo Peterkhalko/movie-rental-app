@@ -14,16 +14,13 @@ const validateObjectId = require("../middleware/validateObjectId");
 
 router.get("/", async (req, res) => {
   const movies = await Movie.find({});
-  if (!movies) {
+  if (movies && movies.length == 0) {
     return res.status("404").send("No data found");
   }
-  console.log(movies);
   res.send(movies);
 });
 router.get("/:id", validateObjectId, async (req, res) => {
   const _id = req.params.id;
-  console.log(_id);
-
   const movie = await Movie.findById({ _id });
   if (!movie) return res.status(404).send("movie not found");
   res.send(movie);
@@ -31,9 +28,12 @@ router.get("/:id", validateObjectId, async (req, res) => {
 
 router.post("/", auth, async (req, res) => {
   const { error } = movieInputValidation(req.body);
+
   if (error) {
+    console.log(error);
     return res.status(400).send(error.details[0].message);
   }
+
   const genre = await Genre.findById(req.body.genreId);
   if (!genre) return res.status(400).send("Please check genreId");
 
