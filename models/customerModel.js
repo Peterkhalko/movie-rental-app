@@ -5,14 +5,14 @@ const Joi = require("joi");
 const customerSchema = mongoose.Schema({
   name: {
     type: String,
-    min: 2,
-    max: 50,
+    minLength: 2,
+    maxLength: 50,
     required: true,
   },
   phone: {
     type: String,
-    min: 10,
-    max: 10,
+    minLength: 10,
+    maxLength: 10,
     require: true,
   },
   isGold: {

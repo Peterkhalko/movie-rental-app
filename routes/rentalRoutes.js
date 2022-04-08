@@ -9,8 +9,8 @@ const validateObjectId = require("../middleware/validateObjectId");
 
 router.get("/", async (req, res) => {
   const rentals = await Rentals.find({});
-  if (!rentals) {
-    return res.status(400).send("unable to find");
+  if (!rentals || rentals.length == 0) {
+    return res.status(404).send("unable to find");
   }
   res.send(rentals);
 });
@@ -18,9 +18,8 @@ router.get("/:id", validateObjectId, async (req, res) => {
   const _id = req.params.id;
   const rental = await Rentals.findById({ _id });
   if (!rental) {
-    return res.status(400).send("unable to find");
+    return res.status(404).send("unable to find");
   }
-  console.log(rental);
   res.send(rental);
 });
 router.post("/", auth, async (req, res) => {

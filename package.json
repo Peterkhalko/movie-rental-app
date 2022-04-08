@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@feathers-plus/validate-joi-mongodb": "github:feathers-plus/validate-joi-mongodb",
     "@sendgrid/mail": "^7.6.2",
     "bcrypt": "^5.0.1",
     "config": "^3.3.7",

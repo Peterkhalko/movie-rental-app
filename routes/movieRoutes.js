@@ -30,7 +30,6 @@ router.post("/", auth, async (req, res) => {
   const { error } = movieInputValidation(req.body);
 
   if (error) {
-    console.log(error);
     return res.status(400).send(error.details[0].message);
   }
 

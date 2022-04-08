@@ -4,8 +4,8 @@ const Joi = require("joi");
 const genreSchema = new mongoose.Schema({
   name: {
     type: String,
-    min: 3,
-    max: 20,
+    minLength: 3,
+    maxLength: 50,
     required: true,
     trim: true,
   },

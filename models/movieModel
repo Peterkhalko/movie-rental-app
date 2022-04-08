@@ -6,8 +6,8 @@ const { genreSchema } = require("./genreModel");
 const movieSchema = new mongoose.Schema({
   title: {
     type: String,
-    min: 1,
-    max: 225,
+    minLength: 1,
+    maxLength: 225,
     required: true,
     trim: true,
   },
@@ -20,8 +20,8 @@ const movieSchema = new mongoose.Schema({
   },
   numberInStocks: {
     type: Number,
-    min: 0,
-    max: 255,
+    minLength: 0,
+    maxLength: 255,
     required: true,
   },
 });

@@ -10,8 +10,8 @@ const { joiPassword } = require("joi-password");
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    min: 5,
-    max: 255,
+    minLength: 5,
+    maxLength: 25,
     required: true,
   },
   email: {
@@ -20,8 +20,8 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    min: 5,
-    max: 1024,
+    minLength: 5,
+    maxLength: 1024,
     required: true,
   },
   isAdmin: {
