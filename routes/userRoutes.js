@@ -9,28 +9,28 @@ const adminAuth = require("../middleware/adminAuth");
 const validateObjectId = require("../middleware/validateObjectId");
 const { sendWelcomeEmail } = require("../emails/account");
 router.get("/", async (req, res) => {
-  const users = await Users.find({ name });
-  if (!users) {
-    res.send("no user found");
+  const users = await Users.find();
+  if (!users || users.length == 0) {
+    res.status(404).send("no user found");
   }
   res.send(users);
 });
 router.get("/:id", validateObjectId, async (req, res) => {
   const _id = req.params.id;
   const user = await Users.findById({ _id });
-  if (!user) {
-    return res.send("User not found");
+  if (!user || user.length == 0) {
+    res.status(404).send("no user found");
   }
   res.send(user);
 });
 router.post("/", async (req, res) => {
   const { error } = userInputValidation(req.body);
   if (error) {
-    return res.status(404).send(`${error.details[0].message}`);
+    return res.status(400).send(`${error.details[0].message}`);
   }
   let user = await Users.findOne({ email: req.body.email });
   if (user) {
-    return res.status(400).send("Email already exists");
+    return res.status(409).send("Email already exists");
   }
   bcrypt.genSalt(10, async function (err, salt) {
     bcrypt.hash(req.body.password, salt, async function (err, hash) {
@@ -52,8 +52,8 @@ router.post("/", async (req, res) => {
 
 router.delete("/:id", validateObjectId, async (req, res) => {
   const user = await Users.findByIdAndDelete(req.params.id);
-  if (!user) {
-    res.send("user not found");
+  if (!user || user.length == 0) {
+    res.status(404).send("user not found");
   }
   res.send(user);
 });

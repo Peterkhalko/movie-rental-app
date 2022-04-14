@@ -10,8 +10,8 @@ const { joiPassword } = require("joi-password");
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    minLength: 5,
-    maxLength: 25,
+    minLength: 2,
+    maxLength: 50,
     required: true,
   },
   email: {
@@ -38,8 +38,8 @@ userSchema.methods.getAuthToken = function () {
 };
 function userInputValidation(input) {
   const schema = Joi.object({
-    name: Joi.string().min(5).max(50).required(),
-    email: Joi.string().min(1).max(100).email().required(),
+    name: Joi.string().min(2).max(50).required(),
+    email: Joi.string().min(3).max(100).email().required(),
     password: joiPassword
       .string()
       // .minOfSpecialCharacters(2)

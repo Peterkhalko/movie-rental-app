@@ -32,7 +32,7 @@ router.post("/", auth, async (req, res) => {
   if (!movie || !customer) {
     return res.status(400).send("movie or customer not found");
   }
-  if (movie.numberInSocks == 0)
+  if (movie.numberInStocks == 0)
     return res.status(400).send("Movie out of stock");
 
   const rental = new Rentals({

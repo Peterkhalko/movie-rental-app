@@ -29,7 +29,7 @@ describe("/api/genres", () => {
         })
       ).toBeTruthy();
     });
-    it("should return", async () => {
+    it("should return 404 if no genre found", async () => {
       const res = await req.get("/api/genres");
       expect(res.status).toBe(404);
     });

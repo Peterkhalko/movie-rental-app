@@ -12,7 +12,7 @@ describe("/api/movies", () => {
     await Movie.deleteMany({});
   });
   describe("GET /", () => {
-    it("should return 404    no movie found to display", async () => {
+    it("should return 404  no movie found to display", async () => {
       const movies = await req.get("/api/movies");
       expect(movies.status).toBe(404);
     });
