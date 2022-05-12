@@ -48,8 +48,10 @@ router.post("/", auth, async (req, res) => {
     },
     rentalFee: movie.dailyRentalRate * 10,
   });
+
   const session = await Rentals.startSession();
   session.startTransaction();
+
   try {
     await rental.save();
     await Movie.findByIdAndUpdate(movie._id, {
@@ -61,12 +63,12 @@ router.post("/", auth, async (req, res) => {
   } catch (error) {
     session.abortTransaction();
     session.endSession();
-    return res.status(500).send("Something failed");
+    return res.status(500).send("Something failed", error);
   }
 });
 
-router.patch("/:id", validateObjectId, auth, async (req, res) => {
-  const _id = req.params.id;
+//router.patch("/:id", validateObjectId, auth, async (req, res) => {
+router.patch("/:id", async (req, res) => {
   const session = await Rentals.startSession();
   session.startTransaction();
   try {
@@ -74,7 +76,7 @@ router.patch("/:id", validateObjectId, auth, async (req, res) => {
       req.params.id,
       {
         $set: {
-          dateIn: req.body.currentDate,
+          dateIn: new Date().getTime(),
         },
       },
       { new: true }

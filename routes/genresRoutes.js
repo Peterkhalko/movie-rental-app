@@ -65,9 +65,8 @@ router.put("/:id", validateObjectId, auth, async (req, res) => {
 //   res.send(genreExists);
 // });
 //Delete API
-router.delete("/:id", validateObjectId, auth, adminAuth, async (req, res) => {
+router.delete("/:id", auth, adminAuth, validateObjectId, async (req, res) => {
   const id = req.params.id;
-
   const genre = await Genre.findByIdAndDelete(id);
   if (!genre) {
     throw { message: "_id not found to delete the data" };

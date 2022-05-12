@@ -24,6 +24,10 @@ const movieSchema = new mongoose.Schema({
     maxLength: 255,
     required: true,
   },
+  liked: {
+    type: Boolean,
+    default: false,
+  },
 });
 function movieInputValidation(input) {
   const schema = Joi.object({
@@ -31,6 +35,7 @@ function movieInputValidation(input) {
     genreId: Joi.objectId().required(),
     dailyRentalRate: Joi.number().min(0).max(255).required(),
     numberInStocks: Joi.number().min(0).max(255).required(),
+    liked: Joi.boolean().default(false),
   });
   return schema.validate(input);
 }

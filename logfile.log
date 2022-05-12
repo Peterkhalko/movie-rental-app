@@ -1904,3 +1904,150 @@
 {"level":"error","message":"undefined, error caught at : Wed Apr 13 2022 14:32:02 GMT+0530 (India Standard Time)"}
 {"level":"error","message":"_id not found to update the data, error caught at : Wed Apr 13 2022 14:32:02 GMT+0530 (India Standard Time)"}
 {"level":"error","message":"_id not found to delete the data, error caught at : Wed Apr 13 2022 14:32:02 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"Romantic\" }, error caught at : Thu Apr 21 2022 15:21:24 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"Drama\" }, error caught at : Thu Apr 21 2022 15:21:42 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.movies index: genre.name_1 dup key: { genre.name: \"Scifi\" }, error caught at : Thu Apr 21 2022 15:25:19 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Joi.boolean.default is not a function, error caught at : Thu Apr 21 2022 15:29:22 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Joi.boolean.default is not a function, error caught at : Thu Apr 21 2022 15:30:15 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Joi.boolean.default is not a function, error caught at : Thu Apr 21 2022 15:30:29 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token } in JSON at position 138, error caught at : Thu Apr 21 2022 15:32:13 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 16:34:41 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 16:34:43 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 16:34:44 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 16:34:45 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 16:34:46 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 16:34:46 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 16:34:47 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 16:34:47 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 16:34:59 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"Scifi\" }, error caught at : Fri Apr 29 2022 17:30:30 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"Scifi\" }, error caught at : Fri Apr 29 2022 17:30:32 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to update the data, error caught at : Fri Apr 29 2022 17:30:54 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:33 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:34 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:38 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:38 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:39 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:39 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:40 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:40 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:40 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:40 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:41 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:41 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:41 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:41 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:42 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:42 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:42 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:42 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:43 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:43 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:43 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:44 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:44 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:38:44 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"comedy\" }, error caught at : Fri Apr 29 2022 17:39:02 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"sicfi\" }, error caught at : Fri Apr 29 2022 17:40:45 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:42:12 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:43:32 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:45:55 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:45:56 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:45:56 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 17:53:16 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"test4\" }, error caught at : Fri Apr 29 2022 18:03:13 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 18:03:39 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 18:03:39 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 18:03:39 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 18:03:40 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 18:03:40 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 18:13:21 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri Apr 29 2022 18:13:21 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token \" in JSON at position 0, error caught at : Mon May 02 2022 16:03:27 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Mon May 02 2022 18:50:22 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Mon May 02 2022 18:51:20 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Mon May 02 2022 18:52:42 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue May 03 2022 15:34:09 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"asdfad\" }, error caught at : Tue May 03 2022 15:34:41 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue May 03 2022 15:35:57 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue May 03 2022 15:37:34 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set headers after they are sent to the client, error caught at : Tue May 03 2022 15:38:25 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"test\" }, error caught at : Tue May 03 2022 15:42:00 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"Dragon\" }, error caught at : Tue May 03 2022 15:45:58 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:10:01 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:12:10 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:12:57 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:14:11 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:14:56 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:15:42 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:17:02 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:38:42 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:38:43 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:38:44 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:44:05 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:44:06 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:44:06 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:44:06 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:44:07 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Thu May 05 2022 14:46:57 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri May 06 2022 10:14:20 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"Dragon\" }, error caught at : Fri May 06 2022 10:17:59 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"_id not found to delete the data, error caught at : Fri May 06 2022 10:20:30 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"undefined, error caught at : Fri May 06 2022 10:34:07 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"customer\", error caught at : Fri May 06 2022 16:42:20 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"customer\", error caught at : Fri May 06 2022 16:42:20 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token 1 in JSON at position 0, error caught at : Fri May 06 2022 19:18:48 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token 1 in JSON at position 0, error caught at : Fri May 06 2022 19:19:57 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token 1 in JSON at position 0, error caught at : Fri May 06 2022 19:20:08 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token 1 in JSON at position 0, error caught at : Fri May 06 2022 19:20:53 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token 1 in JSON at position 0, error caught at : Fri May 06 2022 19:21:30 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token 1 in JSON at position 0, error caught at : Fri May 06 2022 20:14:42 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token 1 in JSON at position 0, error caught at : Fri May 06 2022 20:14:57 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token 1 in JSON at position 0, error caught at : Fri May 06 2022 20:16:10 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token 1 in JSON at position 0, error caught at : Fri May 06 2022 20:18:33 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: Something failed, error caught at : Mon May 09 2022 11:32:31 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: Something failed, error caught at : Mon May 09 2022 11:33:51 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: Something failed, error caught at : Mon May 09 2022 11:35:11 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: Something failed, error caught at : Mon May 09 2022 11:35:49 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: Something failed, error caught at : Mon May 09 2022 11:36:09 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: Something failed, error caught at : Mon May 09 2022 11:38:20 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: Something failed, error caught at : Mon May 09 2022 11:38:49 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: Something failed, error caught at : Mon May 09 2022 11:39:26 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: Something failed, error caught at : Mon May 09 2022 11:42:18 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: Something failed, error caught at : Mon May 09 2022 12:00:49 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token \" in JSON at position 0, error caught at : Mon May 09 2022 12:39:23 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Mon May 09 2022 21:04:31 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Mon May 09 2022 21:05:08 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Mon May 09 2022 21:05:30 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Mon May 09 2022 21:05:55 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Mon May 09 2022 21:07:02 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Tue May 10 2022 10:28:44 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Tue May 10 2022 10:29:51 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Tue May 10 2022 10:31:00 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: 14, error caught at : Tue May 10 2022 11:32:01 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Invalid status code: 14, error caught at : Tue May 10 2022 11:33:19 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"E11000 duplicate key error collection: movie_rental_dev.genres index: name_1 dup key: { name: \"test10\" }, error caught at : Tue May 10 2022 20:11:48 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Wed May 11 2022 10:38:22 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cannot set properties of undefined (setting 'name'), error caught at : Wed May 11 2022 11:54:40 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cast to string failed for value \"{ query: 'thriller' }\" (type Object) at path \"name\" for model \"movies\", error caught at : Wed May 11 2022 13:14:27 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cast to string failed for value \"{ query: 'scifi' }\" (type Object) at path \"name\" for model \"movies\", error caught at : Wed May 11 2022 13:15:06 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Cast to string failed for value \"{ query: 'inspiration' }\" (type Object) at path \"name\" for model \"movies\", error caught at : Wed May 11 2022 13:15:26 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"query is not defined, error caught at : Wed May 11 2022 13:22:59 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"query is not defined, error caught at : Wed May 11 2022 13:23:34 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"query is not defined, error caught at : Wed May 11 2022 13:24:29 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"iNSPiRAt is not defined, error caught at : Wed May 11 2022 18:58:20 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Parameter \"filter\" to find() must be an object, got [object Object], error caught at : Wed May 11 2022 19:12:42 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"inspirat is not defined, error caught at : Wed May 11 2022 19:14:19 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token \" in JSON at position 0, error caught at : Wed May 11 2022 19:28:59 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token \" in JSON at position 0, error caught at : Wed May 11 2022 19:29:01 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token \" in JSON at position 0, error caught at : Wed May 11 2022 19:29:01 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token \" in JSON at position 0, error caught at : Wed May 11 2022 19:29:02 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token \" in JSON at position 0, error caught at : Wed May 11 2022 19:29:02 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token \" in JSON at position 0, error caught at : Wed May 11 2022 19:29:02 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token \" in JSON at position 0, error caught at : Wed May 11 2022 19:29:02 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token \" in JSON at position 0, error caught at : Wed May 11 2022 19:29:02 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Unexpected token \" in JSON at position 0, error caught at : Wed May 11 2022 19:29:45 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Can't use $text with String., error caught at : Wed May 11 2022 19:46:07 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Can't use $text with String., error caught at : Wed May 11 2022 19:47:51 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms, error caught at : Thu May 12 2022 09:59:01 GMT+0530 (India Standard Time)"}
+{"level":"error","message":"sortValue is not defined, error caught at : Thu May 12 2022 17:13:48 GMT+0530 (India Standard Time)"}

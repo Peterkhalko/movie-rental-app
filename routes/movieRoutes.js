@@ -11,7 +11,6 @@ const { append } = require("express/lib/response");
 const req = require("express/lib/request");
 const adminAuth = require("../middleware/adminAuth");
 const validateObjectId = require("../middleware/validateObjectId");
-
 router.get("/", async (req, res) => {
   const movies = await Movie.find({});
   if (movies && movies.length == 0) {
@@ -35,7 +34,6 @@ router.post("/", auth, async (req, res) => {
 
   const genre = await Genre.findById(req.body.genreId);
   if (!genre) return res.status(400).send("Please check genreId");
-
   const movie = new Movie({
     title: req.body.title,
     genre: {
@@ -44,9 +42,43 @@ router.post("/", auth, async (req, res) => {
     },
     dailyRentalRate: req.body.dailyRentalRate,
     numberInStocks: req.body.numberInStocks,
+    liked: req.body.liked,
   });
   await movie.save();
   res.send(movie);
+});
+//pagination route
+router.post("/pfs", async (req, res) => {
+  let args = {};
+  let sortArgs = {};
+  if (req.body.genre && req.body.genre != "all genre") {
+    args["genre.name"] = req.body.genre;
+  }
+  if (req.body.title) {
+    args["title"] = new RegExp(req.body.title, "i");
+  }
+  if (req.body.sort) {
+    sort = req.body.sort;
+    itemToSort = req.body.itemToSort;
+    sortArgs[itemToSort] = sort;
+  }
+  console.log("sortValue", sortArgs);
+
+  const movies = await Movie.find(args)
+    .limit(5)
+    .skip(req.body.skip)
+    .sort(sortArgs);
+  res.send(movies);
+});
+//moviesCount route
+router.get("/count/movies", async (req, res) => {
+  const { genreName } = req.query;
+  let query = {};
+  if ((genreName && genreName != "all genre") || genreName == undefined) {
+    query["genre.name"] = genreName;
+  }
+  const moviesCount = await Movie.find(query).count();
+  res.send({ count: moviesCount });
 });
 
 router.put("/:id", validateObjectId, auth, async (req, res) => {
@@ -68,6 +100,7 @@ router.put("/:id", validateObjectId, auth, async (req, res) => {
         },
         dailyRentalRate: req.body.dailyRentalRate,
         numberInStocks: req.body.numberInStocks,
+        liked: req.body.liked,
       },
     },
     { new: true }

@@ -33,6 +33,7 @@ router.post("/", auth, async (req, res) => {
     phone: req.body.phone,
     isGold: req.body.isGold,
   });
+
   await customer.save();
   res.send(customer);
 });

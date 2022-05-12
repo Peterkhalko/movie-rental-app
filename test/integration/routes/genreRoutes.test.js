@@ -16,6 +16,7 @@ describe("/api/genres", () => {
         { name: "genre1" },
         { name: "genre2" },
       ]);
+
       const res = await req.get("/api/genres");
       expect(res.status).toBe(200);
       expect(
@@ -23,6 +24,7 @@ describe("/api/genres", () => {
           return (g.name = "genre1");
         })
       ).toBeTruthy();
+  
       expect(
         res.body.some((g) => {
           return (g.name = "genre2");
