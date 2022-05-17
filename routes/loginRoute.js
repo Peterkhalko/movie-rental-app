@@ -4,7 +4,6 @@ const Joi = require("joi");
 const bcrypt = require("bcrypt");
 const { Users } = require("../models/userModel");
 const jwt = require("jsonwebtoken");
-
 router.post("/", async (req, res) => {
   const { error } = validateLogin(req.body);
   if (error) {

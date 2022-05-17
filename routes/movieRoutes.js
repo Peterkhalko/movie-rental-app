@@ -55,26 +55,39 @@ router.post("/pfs", async (req, res) => {
     args["genre.name"] = req.body.genre;
   }
   if (req.body.title) {
-    args["title"] = new RegExp(req.body.title, "i");
+    args["title"] = new RegExp(`^${req.body.title}`, "i");
   }
   if (req.body.sort) {
     sort = req.body.sort;
     itemToSort = req.body.itemToSort;
     sortArgs[itemToSort] = sort;
   }
-  console.log("sortValue", sortArgs);
 
   const movies = await Movie.find(args)
+    .sort(sortArgs)
     .limit(5)
-    .skip(req.body.skip)
-    .sort(sortArgs);
+    .skip(req.body.skip);
+
   res.send(movies);
 });
 //moviesCount route
 router.get("/count/movies", async (req, res) => {
   const { genreName } = req.query;
   let query = {};
-  if ((genreName && genreName != "all genre") || genreName == undefined) {
+  let isTitleSearch = false;
+  if (genreName.substring(0, 11) == "titleSearch") {
+    query["title"] = new RegExp(
+      `^${genreName.substring(11, genreName.length)}`,
+      "i"
+    );
+
+    isTitleSearch = true;
+  }
+
+  if (
+    (!isTitleSearch && genreName && genreName != "all genre") ||
+    genreName == undefined
+  ) {
     query["genre.name"] = genreName;
   }
   const moviesCount = await Movie.find(query).count();
