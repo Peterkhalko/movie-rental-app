@@ -49,6 +49,7 @@ router.post("/", auth, async (req, res) => {
 });
 //pagination route
 router.post("/pfs", async (req, res) => {
+  console.log("req.query", req.body);
   let args = {};
   let sortArgs = {};
   if (req.body.genre && req.body.genre != "all genre") {
@@ -63,10 +64,15 @@ router.post("/pfs", async (req, res) => {
     sortArgs[itemToSort] = sort;
   }
 
+  if (req.body.currentItemToSort) {
+    sort = req.body.sortBy;
+    itemToSort = req.body.currentItemToSort;
+    sortArgs[itemToSort] = sort;
+  }
   const movies = await Movie.find(args)
-    .sort(sortArgs)
+    .skip(req.body.skip)
     .limit(5)
-    .skip(req.body.skip);
+    .sort(sortArgs);
 
   res.send(movies);
 });
