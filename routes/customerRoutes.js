@@ -65,7 +65,7 @@ router.put("/:id", validateObjectId, auth, async (req, res) => {
 //     const _id = req.params.id;
 //     const { error } = customerInputValidationPATCH(req.body);
 //     if (error) {
-//         console.log("in the erro");
+//
 //       throw error.details[0].message;
 //     }
 //     const customer = await Customer.findByIdAndUpdate(

@@ -58,7 +58,7 @@ router.put("/:id", validateObjectId, auth, async (req, res) => {
 //   }
 //   const { error } = genreInputValidation(req.body);
 //   if (error) {
-//     console.log("error", error.details[0].message);
+//
 //     return res.status(400).send(error.details[0].message);
 //   }
 //   genreExists.name = req.body.name;

@@ -49,7 +49,6 @@ router.post("/", auth, async (req, res) => {
 });
 //pagination route
 router.post("/pfs", async (req, res) => {
-  console.log("req.query", req.body);
   let args = {};
   let sortArgs = {};
   if (req.body.genre && req.body.genre != "all genre") {

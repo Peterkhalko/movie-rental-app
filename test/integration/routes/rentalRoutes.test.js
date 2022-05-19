@@ -281,7 +281,7 @@ describe("/api/rentals", () => {
         .post("/api/rentals")
         .set("x-auth-token", token)
         .send({ customer: customer._id, movie: movie._id });
-      console.log(res);
+
       expect(res.status).toBe(400);
     });
     it("should decrement numberInStock of the chosen movie by 1", async () => {

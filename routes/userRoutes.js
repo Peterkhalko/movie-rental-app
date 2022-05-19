@@ -30,7 +30,6 @@ router.post("/", async (req, res) => {
   }
   let user = await Users.findOne({ email: req.body.email });
   if (user) {
-    console.log("duplicate user");
     return res.status(409).send("Email already exists");
   }
 
