@@ -65,14 +65,15 @@ router.post("/pfs", async (req, res) => {
 
   if (req.body.currentItemToSort) {
     sort = req.body.sortBy;
-    itemToSort = req.body.currentItemToSort;
+    itemToSort = new RegExp(`^${req.body.currentItemToSort}`, "i");
     sortArgs[itemToSort] = sort;
   }
+  console.log("sortargs", sortArgs);
+  console.log("skip", req.body.skip);
   const movies = await Movie.find(args)
     .skip(req.body.skip)
     .limit(5)
     .sort(sortArgs);
-
   res.send(movies);
 });
 //moviesCount route
