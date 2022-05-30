@@ -4,7 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app",
     "test": "jest --watchAll --verbose --coverage"
+  },
+  "engines": {
+    "node": "18.1.0"
   },
   "keywords": [],
   "author": "",
@@ -13,10 +17,12 @@
     "@feathers-plus/validate-joi-mongodb": "github:feathers-plus/validate-joi-mongodb",
     "@sendgrid/mail": "^7.6.2",
     "bcrypt": "^5.0.1",
+    "compression": "^1.7.4",
     "config": "^3.3.7",
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "express-async-errors": "^3.1.1",
+    "helmet": "^5.1.0",
     "joi": "^17.6.0",
     "joi-objectid": "^4.0.2",
     "joi-password": "^3.0.1",

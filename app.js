@@ -6,6 +6,7 @@ require("./startup/logging")();
 require("./startup/config")();
 require("./startup/routes")(app);
 require("./startup/db")();
+require("./startup/prod")(app);
 
 if (process.env.NODE_ENV != "test") {
   require("./startup/port")(app);
