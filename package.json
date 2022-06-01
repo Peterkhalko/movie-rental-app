@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app",
+    "start": "set NODE_ENV=development&& nodemon app",
+    "start-prod": "set NODE_ENV=production&& nodemon app",
     "test": "jest --watchAll --verbose --coverage"
   },
   "engines": {
